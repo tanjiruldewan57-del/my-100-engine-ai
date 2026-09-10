@@ -1,0 +1,21 @@
+# Ignore common Python files
+*.pyc
+__pycache__/
+*.egg-info/
+build/
+dist/
+*.venv/
+venv/
+env/
+
+# Ignore Node.js/npm files
+node_modules/
+npm-debug.log
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+
+# Ignore OS generated files
+.DS_Store

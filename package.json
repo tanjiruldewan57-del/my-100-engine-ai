@@ -1,0 +1,12 @@
+{
+  "name": "my-100-engine-ai",
+  "version": "1.0.0",
+  "description": "Core project for 100-Engine AI Architecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "OpenHands <openhands@all-hands.dev>",
+  "license": "ISC"
+}

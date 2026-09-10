@@ -1,0 +1,13 @@
+[project]
+name = "my-100-engine-ai"
+version = "1.0.0"
+description = "Century 100-Engine Autonomous AI Software Engineering Matrix"
+requires-python = ">=3.12"
+dependencies = [
+    "litellm>=1.40.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "pydantic>=2.7.0",
+    "rich>=13.7.0",
+    "pytest>=8.0.0"
+]

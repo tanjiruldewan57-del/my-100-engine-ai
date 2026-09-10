@@ -1,0 +1,4 @@
+Read AGENTS.md and master_execution_blueprint.md. Start Phase 1 execution:
+1. Scaffold the core 5-phase project directory structure.
+2. Initialize foundational configuration files (.gitignore, package configs, lint rules).
+3. Create PHASE1_SUMMARY.md with the detailed architecture and roadmap.

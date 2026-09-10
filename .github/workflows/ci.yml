@@ -1,0 +1,13 @@
+name: 100-Engine Automated CI
+on: [push, pull_request]
+jobs:
+  test-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Ruff Lint
+        run: pip install ruff && ruff check .
