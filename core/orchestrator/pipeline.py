@@ -8,7 +8,13 @@ import os, sys, json, time, urllib.request, urllib.error, subprocess
 def query_groq(prompt, system="You are an expert enterprise architect."):
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
-        print("\n[ERROR] GROQ_API_KEY environment variable is not set!")
+        try:
+            with open(os.path.expanduser('~/.openhands/agent_settings.json')) as sf:
+                api_key = json.load(sf)['llm']['api_key']
+        except:
+            pass
+    if not api_key:
+        print("\n[ERROR] GROQ_API_KEY is not set!")
         sys.exit(1)
     
     url = "https://api.groq.com/openai/v1/chat/completions"
