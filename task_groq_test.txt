@@ -1,0 +1,1 @@
+Create a modern, enterprise-ready authentication and user service in phase2_codegen/backend/auth_service.py using FastAPI, Pydantic v2, and secure JWT password hashing. Follow clean architecture standards.
