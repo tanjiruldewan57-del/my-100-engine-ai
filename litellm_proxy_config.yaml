@@ -1,0 +1,30 @@
+# 🔒 ZERO-DOWNTIME LITELLM API ROUTER CONFIGURATION
+# Automatically routes requests: Primary -> Colab Local AI, Fallback 1 -> Gemini Flash, Fallback 2 -> Groq Llama 3
+
+model_list:
+  - model_name: "primary-coder"
+    litellm_params:
+      model: "ollama/deepseek-coder:6.7b"
+      api_base: "YOUR_COLAB_NGROK_TUNNEL_URL" # Replaced dynamically or via env
+      tpm: 100000
+      rpm: 1000
+
+  - model_name: "primary-coder"
+    litellm_params:
+      model: "gemini/gemini-1.5-flash"
+      api_key: "YOUR_GEMINI_FREE_API_KEY"
+      rpm: 15
+      rpd: 1500
+
+  - model_name: "primary-coder"
+    litellm_params:
+      model: "groq/llama-3-70b-8192"
+      api_key: "YOUR_GROQ_FREE_API_KEY"
+      rpm: 30
+      rpd: 14400
+
+router_settings:
+  routing_strategy: "usage-based-routing-v2"
+  num_retries: 3
+  timeout: 10
+  fallbacks: [{"primary-coder": ["gemini/gemini-1.5-flash", "groq/llama-3-70b-8192"]}]
