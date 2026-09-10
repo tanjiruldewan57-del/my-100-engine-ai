@@ -1,3 +1,11 @@
+
+from fastapi import FastAPI
+app = FastAPI(title="🚀 Multi-Vendor Marketplace Matrix API", description="Automated Multi-Vendor Marketplace with Stores, Catalog, Cart & Stripe", version="1.0.0")
+
+@app.get("/")
+def root():
+    return {"status": "online", "system": "Multi-Vendor Marketplace Matrix", "docs_url": "/docs"}
+
 from datetime import datetime, timezone, timedelta
 from enum import Enum
 from typing import Optional, List
@@ -99,4 +107,3 @@ class ProductModel(Base):
     price = Column(Float, nullable=False)
     currency = Column(String(3), default="USD", nullable=False)
     sku = Column(String(100), unique=True, index=True, nullable=False)
-    is
